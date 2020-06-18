@@ -1,5 +1,7 @@
 # Demo
 
+![Elixir CI](https://github.com/iNeedThis/auth_ex/workflows/Elixir%20CI/badge.svg?branch=master)
+
 This is a demo application containing:
 
   1. Phoenix Live Dashboard
