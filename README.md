@@ -1,6 +1,6 @@
 # Phoenix AuthDemo
 
-![Elixir CI](https://github.com/iNeedThis/auth_ex/workflows/Elixir%20CI/badge.svg?branch=master)
+![Elixir CI](https://github.com/iNeedThis/auth_ex/workflows/Elixir%20CI/badge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/iNeedThis/auth_ex/badge.svg?branch=master)](https://coveralls.io/github/iNeedThis/auth_ex?branch=master)
 
 ## This is a demo application containing:
 
