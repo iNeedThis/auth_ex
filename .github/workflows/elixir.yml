@@ -10,6 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      MIX_ENV: test
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     services:
       db:
         image: postgres:11
@@ -30,3 +34,4 @@ jobs:
           elixir-version: '1.10.3'
       - run: mix deps.get
       - run: mix test
+      - run: mix coveralls.github

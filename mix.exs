@@ -11,6 +11,8 @@ defmodule Auth.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
 
       # Docs
       name: "Auth",
@@ -44,6 +46,7 @@ defmodule Auth.MixProject do
   defp deps do
     [
       {:bcrypt_elixir, "~> 2.0"},
+      {:excoveralls, "~> 0.10", only: :test},
       {:phoenix, github: "phoenixframework/phoenix", override: true},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.1"},
