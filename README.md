@@ -1,4 +1,4 @@
-# Demo
+# Phoenix AuthDemo
 
 ![Elixir CI](https://github.com/iNeedThis/auth_ex/workflows/Elixir%20CI/badge.svg?branch=master)
 
