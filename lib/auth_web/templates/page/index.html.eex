@@ -1,38 +1,82 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace-of-mind from prototype to production</p>
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title"><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+      <h2 class="subtitle">
+        Peace-of-mind from prototype to production
+      </h2>
+    </div>
+  </div>
 </section>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<footer class="footer">
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-one-half">
+          <article class="notification media has-background-white">
+            <figure class="media-left">
+              <span class="icon">
+                <i class="has-text-warning fas fa-columns fa-lg"></i>
+              </span>
+            </figure>
+
+            <div class="media-content">
+              <div class="content">
+                <h1 class="title is-size-4">Resources</h1>
+                <p class="is-size-5 subtitle">
+                  <article class="column">
+                    <ul>
+                      <li>
+                        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+                      </li>
+                      <li>
+                        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+                      </li>
+                      <li>
+                        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+                      </li>
+                    </ul>
+                  </article>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="column is-one-half">
+          <article class="notification has-background-white media">
+            <figure class="media-left">
+              <span class="icon has-text-info">
+                <i class="fab fa-lg fa-wpforms"></i>
+              </span>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <h1 class="title is-size-4">Help</h1>
+                <p class="is-size-5 subtitle">
+                  <article class="column">
+                    <ul>
+                      <li>
+                        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+                      </li>
+                      <li>
+                        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+                      </li>
+                      <li>
+                        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+                      </li>
+                      <li>
+                        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+                      </li>
+                    </ul>
+                  </article>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>

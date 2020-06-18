@@ -13,11 +13,12 @@ module.exports = (env, options) => ({
       new OptimizeCSSAssetsPlugin({})
     ]
   },
-  entry: {
-    './js/app.js': glob.sync('./vendor/**/*.js').concat(['./js/app.js'])
+    entry: {
+    'app': ['./js/app.js'].concat(glob.sync('./vendor/**/*.js')),
+    'admin': ['./js/admin.js'].concat(glob.sync('./vendor/**/*.js')),
   },
   output: {
-    filename: 'app.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, '../priv/static/js')
   },
   devtool: devMode ? 'source-map' : undefined,
@@ -34,18 +35,26 @@ module.exports = (env, options) => ({
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { } },
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.sass$|\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: devMode
-            }
-          }
-        ]
-      }
+            options: {  },
+          },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '../css/app.css' }),
+    new MiniCssExtractPlugin({ filename: '../css/[name].css' }),
     new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
   ]
 });

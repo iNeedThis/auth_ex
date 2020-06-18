@@ -4,6 +4,7 @@ defmodule Auth.Accounts.User do
 
   @derive {Inspect, except: [:password]}
   schema "users" do
+    field :name, :string
     field :email, :string
     field :password, :string, virtual: true
     field :hashed_password, :string
@@ -22,7 +23,7 @@ defmodule Auth.Accounts.User do
   """
   def registration_changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:name, :email, :password])
     |> validate_email()
     |> validate_password()
   end

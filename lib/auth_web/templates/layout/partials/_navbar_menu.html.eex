@@ -1,0 +1,35 @@
+<div class="navbar-brand">
+  <a class="navbar-item" href="/">
+    <img src="/images/logo.png" height="28"><strong>AuthDemo</strong>
+  </a>
+
+  <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
+</div>
+
+<div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-start">
+    <a class="navbar-item" href="/">
+      Home
+    </a>
+  </div>
+
+  <div class="navbar-end">
+    <%= if @current_user do %>
+      <a href="<%= Routes.user_settings_path(@conn, :edit) %>" class="navbar-item"><%= @current_user.email %></a>
+
+      <div class="buttons">
+        <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "button is-light" %>
+        <%= link "Logout", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "button is-primary" %>
+      </div>
+    <% else %>
+      <div class="buttons">
+        <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "button is-primary" %>
+        <%= link "Login", to: Routes.user_session_path(@conn, :new), class: "button is-light" %>
+      </div>
+    <% end %>
+  </div>
+</div>

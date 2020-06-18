@@ -1,27 +1,59 @@
-<h1>Login</h1>
+<div class="columns is-vcentered">
+  <div class="login column is-4 ">
+    <section class="section">
+      <%= form_for @conn, Routes.user_session_path(@conn, :create), [as: :user], fn f -> %>
+        <div class="has-text-centered">
+          <a href="/"><img class="login-logo" src="/images/logo.png"></a>
+          <h1>Login</h1>
 
-<%= form_for @conn, Routes.user_session_path(@conn, :create), [as: :user], fn f -> %>
-  <%= if @error_message do %>
-    <div class="alert alert-danger">
-      <p><%= @error_message %></p>
-    </div>
-  <% end %>
+          <%= if @error_message do %>
+            <div class="alert alert-danger">
+              <p><%= @error_message %></p>
+            </div>
+          <% end %>
+        </div>
 
-  <%= label f, :email %>
-  <%= text_input f, :email, required: true %>
+        <div class="field">
+          <%= label f, :email, class: "label" %>
 
-  <%= label f, :password %>
-  <%= password_input f, :password, required: true %>
+          <div class="control has-icons-right">
+            <%= text_input f, :email, required: true, class: "input" %>
 
-  <%= label f, :remember_me, "Keep me logged in for 60 days" %>
-  <%= checkbox f, :remember_me %>
+            <span class="icon is-small is-right">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+        </div>
 
-  <div>
-    <%= submit "Login" %>
+        <div class="field">
+          <%= label f, :password, class: "label" %>
+
+          <div class="control has-icons-right">
+            <%= password_input f, :password, required: true, class: "input" %>
+
+            <span class="icon is-small is-right">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= checkbox f, :remember_me, class: "mr-2" %>
+          <%= label f, :remember_me, "Keep me logged in for 60 days" %>
+        </div>
+
+        <div class="has-text-centered mt-5 mb-5">
+          <%= submit "Login", class: "button is-vcentered is-primary is-outlined" %>
+        </div>
+
+        <div class="has-text-centered">
+          <%= link "Don't have an account? Sign up now!", to: Routes.user_registration_path(@conn, :new) %>
+          </br>
+          <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new) %>
+        </div>
+      <% end %>
+    </section>
   </div>
-<% end %>
 
-<p>
-  <%= link "Register", to: Routes.user_registration_path(@conn, :new) %> |
-  <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new) %>
-</p>
+  <div id="particles-js" class="interactive-bg column is-8"></div>
+</div>

@@ -5,6 +5,10 @@ defmodule AuthWeb.Router do
   import Phoenix.LiveDashboard.Router
   import AuthWeb.UserAuth
 
+  pipeline :auth_layout do
+    plug :put_layout, {AuthWeb.LayoutView, :auth}
+  end
+
   pipeline :admins_only do
     plug :basic_auth, username: "admin", password: "password"
   end
@@ -43,7 +47,7 @@ defmodule AuthWeb.Router do
   ## Authentication routes
 
   scope "/", AuthWeb do
-    pipe_through [:browser, :redirect_if_user_is_authenticated]
+    pipe_through [:auth_layout, :browser, :redirect_if_user_is_authenticated]
 
     get "/users/register", UserRegistrationController, :new
     post "/users/register", UserRegistrationController, :create
@@ -65,7 +69,7 @@ defmodule AuthWeb.Router do
   end
 
   scope "/", AuthWeb do
-    pipe_through [:browser]
+    pipe_through [:auth_layout, :browser]
 
     delete "/users/logout", UserSessionController, :delete
     get "/users/confirm", UserConfirmationController, :new

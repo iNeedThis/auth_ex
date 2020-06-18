@@ -8,8 +8,8 @@ defmodule AuthWeb.UserRegistrationControllerTest do
       conn = get(conn, Routes.user_registration_path(conn, :new))
       response = html_response(conn, 200)
       assert response =~ "<h1>Register</h1>"
+      assert response =~ "Sign Up!</button>"
       assert response =~ "Login</a>"
-      assert response =~ "Register</a>"
     end
 
     test "redirects if already logged in", %{conn: conn} do
@@ -22,10 +22,11 @@ defmodule AuthWeb.UserRegistrationControllerTest do
     @tag :capture_log
     test "creates account and logs the user in", %{conn: conn} do
       email = unique_user_email()
+      name  = unique_user_name()
 
       conn =
         post(conn, Routes.user_registration_path(conn, :create), %{
-          "user" => %{"email" => email, "password" => valid_user_password()}
+          "user" => %{"name" => name, "email" => email, "password" => valid_user_password()}
         })
 
       assert get_session(conn, :user_token)

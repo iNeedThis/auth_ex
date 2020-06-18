@@ -1,0 +1,11 @@
+<%= unless is_nil(get_flash(@conn, :info)) do %>
+  <div role="alert">
+    <x-flashmessages props-json='{"message":"<%= get_flash(@conn, :info) %>","type":"success"}'></x-flashmessages>
+  </div>
+<% end %>
+
+<%= unless is_nil(get_flash(@conn, :error)) do %>
+  <div role="alert">
+    <x-flashmessages props-json='{"message":"<%= get_flash(@conn, :error) %>","type":"error"}'></x-flashmessages>
+  </div>
+<% end %>

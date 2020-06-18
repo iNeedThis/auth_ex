@@ -1,7 +1,10 @@
 // We need to import the CSS so that webpack will load it.
 // The MiniCssExtractPlugin is used to separate it out into
 // its own CSS file.
-import "../css/app.css"
+import "../css/app.scss"
+
+// Fontawesome (all)
+import '@fortawesome/fontawesome-free/js/all'
 
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
@@ -13,3 +16,12 @@ import "../css/app.css"
 //     import socket from "./socket"
 //
 import "phoenix_html"
+
+// Particles
+import "./vendor/particles"
+
+// Auth
+import "./vendor/main"
+
+// React
+import "./react/app.js"

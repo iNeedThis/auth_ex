@@ -12,8 +12,8 @@ defmodule AuthWeb.UserSessionControllerTest do
       conn = get(conn, Routes.user_session_path(conn, :new))
       response = html_response(conn, 200)
       assert response =~ "<h1>Login</h1>"
-      assert response =~ "Login</a>"
-      assert response =~ "Register</a>"
+      assert response =~ "Login</button>"
+      assert response =~ "Sign up now!</a>"
     end
 
     test "redirects if already logged in", %{conn: conn, user: user} do

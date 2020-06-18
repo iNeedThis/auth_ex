@@ -10,7 +10,17 @@ defmodule Auth.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+
+      # Docs
+      name: "Auth",
+      source_url: "https://github.com/iNeedThis/auth_ex",
+      homepage_url: "http://github.com/iNeedThis/auth_ex",
+      docs: [
+        main: "Auth",
+        logo: "/images/logo.png",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -45,7 +55,8 @@ defmodule Auth.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:phoenix_live_dashboard, "~> 0.1"}
+      {:phoenix_live_dashboard, "~> 0.1"},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 

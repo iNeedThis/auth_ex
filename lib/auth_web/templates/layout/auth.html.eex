@@ -13,14 +13,6 @@
   </head>
 
   <body>
-    <header>
-      <section>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <%= render "partials/_navbar_menu.html", assigns %>
-        </nav>
-      </section>
-    </header>
-
     <main role="main">
       <%= render "partials/_flash.html", assigns %>
       <%= @inner_content %>
