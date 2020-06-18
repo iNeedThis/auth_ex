@@ -3,7 +3,7 @@
 This is a demo application containing:
 
   1. Phoenix Live Dashboard
-  2. Jose Valim's Proposed Auth solution.
+  2. Jose Valim's Proposed Auth solution. https://dashbit.co/blog/a-new-authentication-solution-for-phoenix
 
 To start your Phoenix server:
 
