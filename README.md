@@ -4,8 +4,19 @@
 
 ## This is a demo application containing:
 
-  1. Phoenix Live Dashboard
-  2. Jose Valim's Proposed Auth solution. https://dashbit.co/blog/a-new-authentication-solution-for-phoenix
+  1. Jose Valim's Proposed Auth solution. https://dashbit.co/blog/a-new-authentication-solution-for-phoenix
+
+  ![home](https://github.com/iNeedThis/auth_ex/blob/master/assets/static/images/auth-home-screenshot.png)
+
+  2. Phoenix Live Dashboard
+
+  ![dashboard](https://github.com/iNeedThis/auth_ex/blob/master/assets/static/images/auth-dashboard-screenshot.png)
+
+  3. Bulma styles with variable override.
+
+  ![login](https://github.com/iNeedThis/auth_ex/blob/master/assets/static/images/auth-login-screenshot.png)
+
+  4. React with Remount and React-toastify for flash messages.
 
 ## To start your Phoenix server:
 
