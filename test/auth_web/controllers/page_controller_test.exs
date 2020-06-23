@@ -1,5 +1,5 @@
 defmodule AuthWeb.PageControllerTest do
-  use AuthWeb.ConnCase
+  use AuthWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
